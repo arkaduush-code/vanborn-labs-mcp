@@ -3,7 +3,8 @@
 Model Context Protocol (MCP) server for **[Van Born Labs](https://apify.com/vanborn_labs)** data tools. AI assistants such as **Claude**, **Cursor**, **ChatGPT** (connectors) and **Grok** can discover and call YouTube scrapers, a Google News RSS scraper, an email and domain validator, ATS job scrapers, and more.
 
 Store: [apify.com/vanborn_labs](https://apify.com/vanborn_labs)  
-Website: [arkadiuszvanborn.com/labs](https://arkadiuszvanborn.com/labs)
+Website: [arkadiuszvanborn.com/labs](https://arkadiuszvanborn.com/labs)  
+Source: [github.com/arkaduush-code/vanborn-labs-mcp](https://github.com/arkaduush-code/vanborn-labs-mcp)
 
 You bring **your own [Apify](https://apify.com) API token**. Each tool starts a Van Born Labs **pay-per-event** actor on your account, so you are billed for the run and we earn the developer share. The server never uses a shared token.
 
@@ -93,7 +94,7 @@ docker run --rm -e APIFY_TOKEN=your_apify_token -p 8080:8080 vanborn-labs-mcp
 ### From source
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/arkaduush-code/vanborn-labs-mcp.git
 cd vanborn-labs-mcp
 npm install
 npm run build
