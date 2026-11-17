@@ -1,0 +1,72 @@
+{
+  "title": "YouTube Video Details + Outlier Score",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videos": {
+      "title": "\ud83c\udfac Video URLs or IDs",
+      "type": "array",
+      "description": "Watch URLs, youtu.be links, Shorts, live or embed URLs, or bare 11-character video IDs. Playlist and channel URLs pasted here are expanded too.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://youtu.be/jNQXAC9IVRw"
+      ]
+    },
+    "channels": {
+      "title": "\ud83d\udcfa Channels or playlists",
+      "type": "array",
+      "description": "Channel URLs or @handles (latest videos; add /shorts or /streams to the URL for those tabs) and playlist URLs.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "searchTerms": {
+      "title": "\ud83d\udd0e Search terms",
+      "type": "array",
+      "description": "YouTube search queries. Top video results are scraped \u2014 great for finding outliers in a niche.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "maxVideosPerSource": {
+      "title": "Max videos per channel / playlist / search",
+      "type": "integer",
+      "description": "How many videos to take from each channel, playlist or search term.",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 5000
+    },
+    "maxResults": {
+      "title": "Max results in total (optional)",
+      "type": "integer",
+      "description": "Hard cap on the number of videos scraped (and charged) in this run.",
+      "minimum": 1
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel requests.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 50,
+      "sectionCaption": "Advanced"
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Apify Proxy (datacenter) is used by default.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      },
+      "default": {
+        "useApifyProxy": true
+      }
+    },
+    "residentialFallback": {
+      "title": "Residential proxy fallback",
+      "type": "boolean",
+      "description": "Retry blocked requests through residential proxy (no extra cost to you).",
+      "default": true
+    }
+  }
+}

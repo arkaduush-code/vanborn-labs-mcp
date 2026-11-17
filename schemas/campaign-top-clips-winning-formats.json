@@ -1,0 +1,210 @@
+{
+  "title": "Campaign Top Clips & Winning Formats",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "campaignUrls": {
+      "title": "Campaign URLs or IDs",
+      "type": "array",
+      "description": "Optional Content Rewards campaign links or UUIDs. When set, only these campaigns are analysed.",
+      "editor": "stringList"
+    },
+    "keyword": {
+      "title": "Keyword",
+      "type": "string",
+      "description": "If no campaign URLs are given, keep Discover campaigns whose title, brand, handle, category or description contains this text, then take the top N.",
+      "editor": "textfield"
+    },
+    "boards": {
+      "title": "Discover boards",
+      "type": "array",
+      "description": "Public Content Rewards Discover pages used to find campaigns when no URLs are given.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "all",
+          "clipping",
+          "tiktok",
+          "ugc"
+        ],
+        "enumTitles": [
+          "All campaigns",
+          "Clipping",
+          "TikTok",
+          "UGC"
+        ]
+      },
+      "uniqueItems": true,
+      "default": [
+        "all",
+        "clipping",
+        "tiktok",
+        "ugc"
+      ],
+      "prefill": [
+        "all",
+        "clipping",
+        "tiktok",
+        "ugc"
+      ]
+    },
+    "maxCampaigns": {
+      "title": "Max campaigns",
+      "type": "integer",
+      "description": "How many campaigns to analyse (and whose public top clips will be billed).",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 10,
+      "prefill": 5
+    },
+    "maxClipsPerCampaign": {
+      "title": "Max clips per campaign",
+      "type": "integer",
+      "description": "Content Rewards usually lists up to 10 public top clips. Cap is applied after that.",
+      "minimum": 1,
+      "maximum": 25,
+      "default": 10,
+      "prefill": 10
+    },
+    "clipPlatforms": {
+      "title": "Clip platforms",
+      "type": "array",
+      "description": "Keep only public top clips on these platforms.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tiktok",
+          "instagram",
+          "youtube",
+          "x",
+          "facebook"
+        ],
+        "enumTitles": [
+          "TikTok",
+          "Instagram",
+          "YouTube",
+          "X (Twitter)",
+          "Facebook"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "minViews": {
+      "title": "Minimum views per clip",
+      "type": "integer",
+      "description": "Drop public top clips below this view count.",
+      "minimum": 0
+    },
+    "platforms": {
+      "title": "Campaign platforms",
+      "type": "array",
+      "description": "When discovering campaigns, keep those that allow at least one of these platforms.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tiktok",
+          "instagram",
+          "youtube",
+          "twitter",
+          "facebook"
+        ],
+        "enumTitles": [
+          "TikTok",
+          "Instagram",
+          "YouTube",
+          "X (Twitter)",
+          "Facebook"
+        ]
+      },
+      "uniqueItems": true,
+      "sectionCaption": "Campaign filters"
+    },
+    "category": {
+      "title": "Category contains",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional campaign category filter (e.g. Music, Sports, Entertainment)."
+    },
+    "campaignType": {
+      "title": "Payout type",
+      "type": "string",
+      "description": "Optional payout model filter.",
+      "editor": "select",
+      "enum": [
+        "",
+        "cpm",
+        "perpost",
+        "pool"
+      ],
+      "enumTitles": [
+        "Any",
+        "CPM (per 1,000 views)",
+        "Per post",
+        "Pool"
+      ],
+      "default": ""
+    },
+    "minRatePer1k": {
+      "title": "Minimum $ per 1,000 views",
+      "type": "number",
+      "description": "When discovering campaigns, drop those below this CPM.",
+      "minimum": 0
+    },
+    "minBudgetLeft": {
+      "title": "Minimum budget left (USD)",
+      "type": "number",
+      "description": "When discovering campaigns, drop those with less remaining budget than this.",
+      "minimum": 0
+    },
+    "openOnly": {
+      "title": "Open campaigns only",
+      "type": "boolean",
+      "description": "When discovering campaigns, hide those that require an application.",
+      "default": false
+    },
+    "status": {
+      "title": "Status",
+      "type": "string",
+      "description": "Optional campaign status filter, e.g. active.",
+      "editor": "textfield"
+    },
+    "enrichYouTube": {
+      "title": "Enrich YouTube clips",
+      "type": "boolean",
+      "description": "Look up public duration and publish date for YouTube clips (datacenter proxy on platform runs). Failed lookups are not charged as extra events; the campaign-page clip is still returned.",
+      "default": true,
+      "sectionCaption": "Enrichment"
+    },
+    "enrichTikTok": {
+      "title": "Enrich TikTok clips",
+      "type": "boolean",
+      "description": "Look up public duration and publish date from TikTok video pages when they are visible without a login. Instagram, X and Facebook are never fetched.",
+      "default": true
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 10,
+      "sectionCaption": "Advanced",
+      "description": "How many YouTube/TikTok lookups to run in parallel (1\u201310)."
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Used only for YouTube (and TikTok) enrichment. Leave the default Apify datacenter proxy on for platform runs. Do not enable residential groups.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      },
+      "default": {
+        "useApifyProxy": true
+      },
+      "sectionCaption": "Advanced"
+    }
+  }
+}

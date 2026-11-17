@@ -1,0 +1,140 @@
+{
+  "title": "Content Rewards Campaigns Monitor",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "boards": {
+      "title": "Discover boards",
+      "type": "array",
+      "description": "Public Content Rewards discover pages to scrape. Combined and deduplicated.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "all",
+          "clipping",
+          "tiktok",
+          "ugc"
+        ],
+        "enumTitles": [
+          "All campaigns",
+          "Clipping",
+          "TikTok",
+          "UGC"
+        ]
+      },
+      "uniqueItems": true,
+      "default": [
+        "all",
+        "clipping",
+        "tiktok",
+        "ugc"
+      ],
+      "prefill": [
+        "all",
+        "clipping",
+        "tiktok",
+        "ugc"
+      ]
+    },
+    "campaignUrls": {
+      "title": "Specific campaign URLs or IDs",
+      "type": "array",
+      "description": "Optional Content Rewards campaign links or UUIDs. When set, results are limited to these campaigns (details are fetched if they are not on Discover).",
+      "editor": "stringList"
+    },
+    "includeDetails": {
+      "title": "Enrich with campaign detail pages",
+      "type": "boolean",
+      "description": "Fetch each campaign's public detail page for per-platform payouts, status and content types. Slower; still no login.",
+      "default": false
+    },
+    "keyword": {
+      "title": "Keyword",
+      "type": "string",
+      "description": "Keep campaigns whose title, brand, handle, category or description contains this text.",
+      "editor": "textfield"
+    },
+    "platforms": {
+      "title": "Platforms",
+      "type": "array",
+      "description": "Keep campaigns that allow at least one of these platforms.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tiktok",
+          "instagram",
+          "youtube",
+          "twitter",
+          "facebook"
+        ],
+        "enumTitles": [
+          "TikTok",
+          "Instagram",
+          "YouTube",
+          "X (Twitter)",
+          "Facebook"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "category": {
+      "title": "Category contains",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional category filter (e.g. Music, Sports, Entertainment)."
+    },
+    "campaignType": {
+      "title": "Payout type",
+      "type": "string",
+      "description": "Optional payout model filter.",
+      "editor": "select",
+      "enum": [
+        "",
+        "cpm",
+        "perpost",
+        "pool"
+      ],
+      "enumTitles": [
+        "Any",
+        "CPM (per 1,000 views)",
+        "Per post",
+        "Pool"
+      ],
+      "default": ""
+    },
+    "minRatePer1k": {
+      "title": "Minimum $ per 1,000 views",
+      "type": "number",
+      "description": "Drop campaigns below this CPM (USD).",
+      "minimum": 0
+    },
+    "minBudgetLeft": {
+      "title": "Minimum budget left (USD)",
+      "type": "number",
+      "description": "Drop campaigns with less remaining budget than this.",
+      "minimum": 0
+    },
+    "openOnly": {
+      "title": "Open campaigns only",
+      "type": "boolean",
+      "description": "Hide campaigns that require an application.",
+      "default": false
+    },
+    "status": {
+      "title": "Status (detail pages)",
+      "type": "string",
+      "description": "Optional status filter, e.g. active. Most useful with detail enrichment.",
+      "editor": "textfield"
+    },
+    "maxItems": {
+      "title": "Max campaigns in total",
+      "type": "integer",
+      "description": "Hard cap on campaigns returned (and charged) in this run.",
+      "minimum": 1,
+      "default": 100,
+      "prefill": 100
+    }
+  }
+}

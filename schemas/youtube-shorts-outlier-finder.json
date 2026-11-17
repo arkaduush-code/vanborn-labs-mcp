@@ -1,0 +1,96 @@
+{
+  "title": "YouTube Shorts Outlier Finder",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "videos": {
+      "title": "Shorts URLs or IDs",
+      "type": "array",
+      "description": "YouTube Shorts URLs, watch URLs, youtu.be links or bare 11-character video IDs.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.youtube.com/shorts/sHpEqeSByPI",
+        "https://www.youtube.com/shorts/bkSNwyl7iHE"
+      ]
+    },
+    "channels": {
+      "title": "Channels",
+      "type": "array",
+      "description": "Channel URLs or @handles. Bare channels use the Shorts tab automatically. Add /videos if you really want the long-form tab.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "hashtags": {
+      "title": "Hashtags",
+      "type": "array",
+      "description": "Hashtags to open on YouTube (with or without #), e.g. funny or #cooking.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "searchTerms": {
+      "title": "Search terms",
+      "type": "array",
+      "description": "YouTube search queries restricted to Shorts. Great for finding outliers in a niche.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "maxVideosPerSource": {
+      "title": "Max Shorts per channel / hashtag / search",
+      "type": "integer",
+      "description": "How many Shorts to take from each channel, hashtag or search term.",
+      "default": 30,
+      "minimum": 1,
+      "maximum": 500
+    },
+    "maxItems": {
+      "title": "Max Shorts in total",
+      "type": "integer",
+      "description": "Hard cap on Shorts scraped and charged in this run.",
+      "minimum": 1,
+      "maximum": 2000,
+      "default": 50,
+      "prefill": 10
+    },
+    "outlierThreshold": {
+      "title": "Outlier threshold",
+      "type": "number",
+      "description": "A Short is flagged isOutlier when views, views/hour or views-per-subscriber are at least this many times the median of the run. 2 means twice the median.",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 20
+    },
+    "shortsOnly": {
+      "title": "Keep Shorts only",
+      "type": "boolean",
+      "description": "Drop long-form videos that slipped in from a search or channel tab. Explicit video URLs are still returned if nothing else qualifies.",
+      "default": true
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel requests. Keep modest to stay polite.",
+      "default": 8,
+      "minimum": 1,
+      "maximum": 20,
+      "sectionCaption": "Advanced"
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Apify Proxy (datacenter) is recommended on the platform so YouTube does not return LOGIN_REQUIRED. Leave residential groups off unless a run is still blocked.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      },
+      "default": {
+        "useApifyProxy": true
+      }
+    },
+    "residentialFallback": {
+      "title": "Residential proxy fallback",
+      "type": "boolean",
+      "description": "If datacenter proxy is still blocked (LOGIN_REQUIRED), retry once through residential. Recommended on the platform so daily runs stay green. Residential traffic is billed, but metadata requests are tiny.",
+      "default": true
+    }
+  }
+}

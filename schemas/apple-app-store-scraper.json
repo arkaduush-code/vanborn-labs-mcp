@@ -1,0 +1,132 @@
+{
+  "title": "Apple App Store Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchTerms": {
+      "title": "Search terms",
+      "type": "array",
+      "description": "App Store search queries (e.g. Slack, photo editor, mindfulness).",
+      "editor": "stringList",
+      "prefill": [
+        "Slack"
+      ]
+    },
+    "apps": {
+      "title": "App IDs or App Store URLs",
+      "type": "array",
+      "description": "Numeric iTunes track IDs or full App Store links such as https://apps.apple.com/us/app/slack/id618783545.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "chartTypes": {
+      "title": "Charts",
+      "type": "array",
+      "description": "Official iTunes RSS charts to include, in addition to search and lookups.",
+      "editor": "select",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "top-free",
+          "top-paid",
+          "top-grossing",
+          "new-free",
+          "new-paid",
+          "top-free-ipad",
+          "top-paid-ipad",
+          "top-grossing-ipad",
+          "top-free-mac",
+          "top-paid-mac",
+          "top-grossing-mac"
+        ],
+        "enumTitles": [
+          "Top Free (iPhone)",
+          "Top Paid (iPhone)",
+          "Top Grossing (iPhone)",
+          "New Free (iPhone)",
+          "New Paid (iPhone)",
+          "Top Free (iPad)",
+          "Top Paid (iPad)",
+          "Top Grossing (iPad)",
+          "Top Free (Mac)",
+          "Top Paid (Mac)",
+          "Top Grossing (Mac)"
+        ]
+      },
+      "prefill": []
+    },
+    "country": {
+      "title": "Country",
+      "type": "string",
+      "description": "App Store country code (us, gb, de, fr, jp, br, in, au, ca, \u2026).",
+      "editor": "textfield",
+      "default": "us",
+      "prefill": "us"
+    },
+    "entity": {
+      "title": "Search entity",
+      "type": "string",
+      "description": "What the keyword search should return. Charts have their own iPhone / iPad / Mac feed types.",
+      "editor": "select",
+      "enum": [
+        "software",
+        "iPadSoftware",
+        "macSoftware"
+      ],
+      "enumTitles": [
+        "iPhone / iOS apps",
+        "iPad apps",
+        "Mac apps"
+      ],
+      "default": "software"
+    },
+    "genre": {
+      "title": "Chart genre (optional)",
+      "type": "string",
+      "description": "Filter charts by genre name or Apple genre ID (e.g. Games or 6014, Finance, Social Networking).",
+      "editor": "textfield"
+    },
+    "includeReviews": {
+      "title": "Include customer reviews",
+      "type": "boolean",
+      "description": "Also scrape official review RSS for each app (up to 10 pages / ~500 most recent reviews per app).",
+      "default": false
+    },
+    "maxApps": {
+      "title": "Max apps",
+      "type": "integer",
+      "description": "Cap on unique apps collected from search, charts and lookups.",
+      "minimum": 1,
+      "maximum": 200,
+      "default": 20,
+      "prefill": 10
+    },
+    "maxReviewsPerApp": {
+      "title": "Max reviews per app",
+      "type": "integer",
+      "description": "Cap on reviews pulled for each app when reviews are enabled. Official RSS stops at about 500.",
+      "minimum": 0,
+      "maximum": 500,
+      "default": 50
+    },
+    "maxItems": {
+      "title": "Max results in total",
+      "type": "integer",
+      "description": "Hard cap on billed dataset items (apps + reviews) in this run.",
+      "minimum": 1,
+      "maximum": 5000,
+      "default": 100,
+      "prefill": 20
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel HTTP requests (keep modest).",
+      "minimum": 1,
+      "maximum": 8,
+      "default": 4,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

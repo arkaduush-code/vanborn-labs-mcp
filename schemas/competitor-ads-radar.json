@@ -1,0 +1,104 @@
+{
+  "title": "Competitor Ads Radar",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "advertisers": {
+      "title": "Advertisers",
+      "type": "array",
+      "description": "Brand names (Nike), domains (bmw.com, pepsico.com), or a Google Ads Transparency AR advertiser id. One lookup is run per item across the selected ad libraries.",
+      "editor": "stringList",
+      "prefill": [
+        "Nike"
+      ]
+    },
+    "region": {
+      "title": "Region",
+      "type": "string",
+      "description": "ISO country code used as the primary region (e.g. US, GB, DE). Google Ads Transparency uses this directly. TikTok's public Ad Library covers EU/EEA, UK, Brazil and Turkey; a US request is searched in GB and noted on the summary.",
+      "editor": "textfield",
+      "default": "US",
+      "prefill": "US"
+    },
+    "platforms": {
+      "title": "Platforms",
+      "type": "array",
+      "description": "Ad libraries to query. Meta and LinkedIn are parked in this version when their public pages are not reliably reachable without a login; they are still listed on the summary so you can see the gap.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "google",
+          "meta",
+          "tiktok",
+          "linkedin"
+        ],
+        "enumTitles": [
+          "Google Ads Transparency",
+          "Meta Ad Library",
+          "TikTok Ad Library",
+          "LinkedIn Ad Library"
+        ]
+      },
+      "uniqueItems": true,
+      "default": [
+        "google",
+        "meta",
+        "tiktok",
+        "linkedin"
+      ],
+      "prefill": [
+        "google",
+        "meta",
+        "tiktok",
+        "linkedin"
+      ]
+    },
+    "maxAdsPerPlatform": {
+      "title": "Max ads per platform",
+      "type": "integer",
+      "description": "Cap on ads fetched (and charged) from each library for each advertiser.",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 20,
+      "prefill": 20
+    },
+    "maxAdsPerAdvertiser": {
+      "title": "Max ads per advertiser",
+      "type": "integer",
+      "description": "Optional overall cap across all libraries for one advertiser. Defaults to max ads per platform times the number of platforms.",
+      "minimum": 1,
+      "maximum": 400
+    },
+    "maxTotal": {
+      "title": "Max ads in total",
+      "type": "integer",
+      "description": "Optional hard cap on ad records across all advertisers in this run.",
+      "minimum": 1
+    },
+    "compareWithLastRun": {
+      "title": "Mark ads new since last run",
+      "type": "boolean",
+      "description": "When on, ad ids are compared to a snapshot in a named key-value store. First run builds the baseline (isNewSinceLastRun is false). Later runs flag new creatives.",
+      "default": true,
+      "groupCaption": "Change detection"
+    },
+    "snapshotStoreName": {
+      "title": "Snapshot store name",
+      "type": "string",
+      "description": "Named Apify key-value store used to remember the last ad-id set per advertiser and region. Same name across scheduled runs enables the diff.",
+      "editor": "textfield",
+      "default": "competitor-ads-radar-snapshots",
+      "prefill": "competitor-ads-radar-snapshots"
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "How many advertisers to query in parallel (keep low to avoid rate limits).",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 6,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

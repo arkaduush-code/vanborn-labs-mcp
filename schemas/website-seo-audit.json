@@ -1,0 +1,66 @@
+{
+  "title": "Website SEO Audit",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Start URLs",
+      "type": "array",
+      "description": "Page or homepage URLs to audit. For a whole site, pass the homepage and enable sitemap discovery.",
+      "editor": "stringList",
+      "prefill": [
+        "https://example.com"
+      ]
+    },
+    "sitemapUrls": {
+      "title": "Sitemap URLs",
+      "type": "array",
+      "description": "Optional sitemap.xml or sitemap index URLs. If empty, the actor tries robots.txt and /sitemap.xml.",
+      "editor": "stringList"
+    },
+    "maxPages": {
+      "title": "Max pages",
+      "type": "integer",
+      "description": "Hard cap on HTML pages fetched and charged in this run.",
+      "minimum": 1,
+      "maximum": 500,
+      "default": 25,
+      "prefill": 25
+    },
+    "followSitemap": {
+      "title": "Discover URLs from sitemap",
+      "type": "boolean",
+      "description": "Parse sitemap.xml (and indexes) and audit listed URLs up to the page cap.",
+      "default": true
+    },
+    "followInternalLinks": {
+      "title": "Follow internal links",
+      "type": "boolean",
+      "description": "If fewer than max pages came from the input and sitemap, crawl same-host links to fill the cap.",
+      "default": true
+    },
+    "checkBrokenLinks": {
+      "title": "Check broken links",
+      "type": "boolean",
+      "description": "HEAD/GET unique links found on each page (capped per page) and record 4xx/5xx targets.",
+      "default": true
+    },
+    "maxLinksPerPage": {
+      "title": "Max links to check per page",
+      "type": "integer",
+      "description": "Cap on outgoing links verified on each page when broken-link checks are on.",
+      "minimum": 0,
+      "maximum": 50,
+      "default": 15
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel HTTP requests (keep modest to be polite).",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 4,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

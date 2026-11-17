@@ -1,0 +1,68 @@
+{
+  "title": "GTA 6 Viral Clips & Trends Tracker",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchTerms": {
+      "title": "Search terms (optional)",
+      "type": "array",
+      "description": "Leave empty to use the built-in GTA 6 / trailer / leak / gameplay / map set.",
+      "editor": "stringList"
+    },
+    "form": {
+      "title": "Video form",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "all",
+        "shorts",
+        "long"
+      ],
+      "enumTitles": [
+        "All (videos + Shorts)",
+        "Shorts only",
+        "Long videos only"
+      ],
+      "default": "all",
+      "description": "Limit results to YouTube Shorts, longer videos, or both."
+    },
+    "maxVideos": {
+      "title": "Max videos in total",
+      "type": "integer",
+      "minimum": 1,
+      "default": 40,
+      "prefill": 40,
+      "description": "Hard cap on videos returned (and charged) in this run."
+    },
+    "maxVideosPerTerm": {
+      "title": "Max videos per search term",
+      "type": "integer",
+      "minimum": 1,
+      "default": 8,
+      "prefill": 8,
+      "description": "Maximum videos collected from each search term before the total cap."
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 8,
+      "sectionCaption": "Advanced",
+      "description": "How many video-detail fetches to run in parallel (1\u20138)."
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "YouTube often blocks cloud IPs (LOGIN_REQUIRED). Leave the default Apify datacenter proxy on for platform runs. Do not enable residential groups unless a run is still blocked.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      },
+      "default": {
+        "useApifyProxy": true
+      },
+      "sectionCaption": "Advanced"
+    }
+  }
+}

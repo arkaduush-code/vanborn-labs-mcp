@@ -1,0 +1,47 @@
+{
+  "title": "Google Ads Transparency Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "advertisers": {
+      "title": "Advertisers",
+      "type": "array",
+      "description": "Brand names (Nike), domains the Transparency Center can search (bmw.com, pepsico.com), advertiser ids (AR\u2026), or pasted Transparency Center URLs.",
+      "editor": "stringList",
+      "prefill": [
+        "Nike"
+      ]
+    },
+    "region": {
+      "title": "Region",
+      "type": "string",
+      "description": "ISO country code used as the Transparency Center region (e.g. US, GB, DE). Default US.",
+      "editor": "textfield",
+      "default": "US",
+      "prefill": "US"
+    },
+    "maxCreativesPerAdvertiser": {
+      "title": "Max ads per advertiser",
+      "type": "integer",
+      "description": "Cap on creatives fetched (and charged) for each resolved advertiser or domain.",
+      "minimum": 1,
+      "default": 20,
+      "prefill": 20
+    },
+    "maxTotal": {
+      "title": "Max ads in total",
+      "type": "integer",
+      "description": "Optional hard cap on creatives across all advertisers in this run.",
+      "minimum": 1
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "How many advertisers to query in parallel (keep low to avoid rate limits).",
+      "default": 2,
+      "minimum": 1,
+      "maximum": 6,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "title": "Google News RSS Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Search keywords",
+      "type": "array",
+      "description": "Google News search queries (e.g. openai, \"climate change\"). Combined with site filters and date filters when those are set.",
+      "editor": "stringList",
+      "prefill": [
+        "artificial intelligence"
+      ]
+    },
+    "topics": {
+      "title": "Topics",
+      "type": "array",
+      "description": "Official Google News topic feeds, in addition to keyword searches.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "WORLD",
+          "NATION",
+          "BUSINESS",
+          "TECHNOLOGY",
+          "ENTERTAINMENT",
+          "SPORTS",
+          "SCIENCE",
+          "HEALTH"
+        ]
+      },
+      "uniqueItems": true,
+      "prefill": []
+    },
+    "sites": {
+      "title": "Restrict to sites",
+      "type": "array",
+      "description": "Publisher domains (bbc.com, reuters.com). Applied as site:domain in the search query.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "geo": {
+      "title": "Location (optional)",
+      "type": "string",
+      "description": "Google News geo topic, e.g. California or London. Uses the official geo headlines feed.",
+      "editor": "textfield"
+    },
+    "includeTopStories": {
+      "title": "Include top stories",
+      "type": "boolean",
+      "description": "Also fetch the Top stories feed for the selected language and country. Used automatically when no query, topic, site or geo is given.",
+      "default": false
+    },
+    "language": {
+      "title": "Language",
+      "type": "string",
+      "description": "ISO language code for Google News (e.g. en, de, fr, ja, es, pt-BR).",
+      "editor": "textfield",
+      "default": "en",
+      "prefill": "en"
+    },
+    "country": {
+      "title": "Country",
+      "type": "string",
+      "description": "ISO country code (e.g. US, GB, DE, FR, JP, IN, BR).",
+      "editor": "textfield",
+      "default": "US",
+      "prefill": "US"
+    },
+    "when": {
+      "title": "Recency",
+      "type": "string",
+      "description": "Limit keyword/site searches to recent articles (Google's when: operator). Topic feeds are filtered by published date instead.",
+      "editor": "select",
+      "enum": [
+        "",
+        "1h",
+        "1d",
+        "7d",
+        "30d"
+      ],
+      "enumTitles": [
+        "Any time",
+        "Past hour",
+        "Past 24 hours",
+        "Past 7 days",
+        "Past 30 days"
+      ],
+      "default": ""
+    },
+    "dateFrom": {
+      "title": "From date (optional)",
+      "type": "string",
+      "description": "ISO date (YYYY-MM-DD). Added as after: to keyword searches and used as a published-date filter.",
+      "editor": "textfield"
+    },
+    "dateTo": {
+      "title": "To date (optional)",
+      "type": "string",
+      "description": "ISO date (YYYY-MM-DD). Added as before: to keyword searches and used as a published-date filter.",
+      "editor": "textfield"
+    },
+    "maxItems": {
+      "title": "Max articles in total",
+      "type": "integer",
+      "description": "Hard cap on articles scraped (and charged) in this run. Google News RSS typically returns up to 100 items per feed.",
+      "minimum": 1,
+      "prefill": 20,
+      "default": 20
+    },
+    "decodeUrls": {
+      "title": "Decode publisher URLs",
+      "type": "boolean",
+      "description": "Resolve news.google.com wrapper links to the real publisher URL (two extra official Google requests per article, no proxy). If decoding fails, the Google News link is kept.",
+      "default": true
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel HTTP requests (feeds and URL decoding).",
+      "default": 8,
+      "minimum": 1,
+      "maximum": 30,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

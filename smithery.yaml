@@ -1,0 +1,17 @@
+# Smithery configuration: https://smithery.ai/docs/build/project-config
+# Do not publish until the GitHub repo and npm package exist and you have a Smithery login.
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - apifyToken
+    properties:
+      apifyToken:
+        type: string
+        description: Your personal Apify API token (APIFY_TOKEN). Runs are billed to your Apify account; Van Born Labs actors are pay-per-event. Create a token at https://console.apify.com/settings/integrations
+  commandFunction: |-
+    (config) => ({ command: 'node', args: ['dist/index.js'], env: { APIFY_TOKEN: config.apifyToken } })
+  exampleConfig:
+    apifyToken: your_apify_token

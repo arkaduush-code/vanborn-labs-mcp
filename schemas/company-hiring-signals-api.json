@@ -1,0 +1,80 @@
+{
+  "title": "Company Hiring Signals API",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "companies": {
+      "title": "Companies",
+      "type": "array",
+      "description": "Companies to score. Each item can be a company domain (stripe.com), an ATS career URL or board slug (https://jobs.ashbyhq.com/linear, greenhouse:stripe), or an object with name, domain and/or board. Duplicates are merged. The Actor auto-detects Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee and public Workday boards.",
+      "editor": "json",
+      "prefill": [
+        "stripe.com",
+        "https://jobs.ashbyhq.com/linear",
+        "https://jobs.lever.co/wealthfront",
+        {
+          "name": "Hugging Face",
+          "board": "https://apply.workable.com/huggingface/"
+        },
+        {
+          "name": "NVIDIA",
+          "board": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite"
+        }
+      ]
+    },
+    "departments": {
+      "title": "Department filter",
+      "type": "array",
+      "description": "Optional. Keep only jobs whose department or team contains one of these words (case-insensitive). Counts, velocity and the momentum score use the filtered set.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "locations": {
+      "title": "Location filter",
+      "type": "array",
+      "description": "Optional. Keep only jobs whose location contains one of these words (e.g. Remote, United States, London).",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "snapshotStore": {
+      "title": "Snapshot store name",
+      "type": "string",
+      "description": "Named Apify key-value store used to remember each company's open roles between runs, so new and closed roles can be diffed. Use a dedicated store per workspace if several teams share the account.",
+      "default": "vanborn-hiring-signals",
+      "editor": "textfield",
+      "sectionCaption": "Snapshots & limits"
+    },
+    "skipSnapshot": {
+      "title": "Skip snapshot read/write",
+      "type": "boolean",
+      "description": "If enabled, do not read or write the named snapshot store. New-roles-since-last-run will be empty; weekly velocity still uses posted dates when the board publishes them.",
+      "default": false
+    },
+    "maxNewRoles": {
+      "title": "Max new roles listed",
+      "type": "integer",
+      "description": "How many new roles (since the last snapshot) to include in each company result. The count is always complete.",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 25
+    },
+    "maxCompanies": {
+      "title": "Max companies in this run",
+      "type": "integer",
+      "description": "Hard cap on how many input companies are processed (and charged) in this run. Duplicates are merged before the cap is applied to unique companies only after parse order; prefer de-duplicating the list yourself.",
+      "minimum": 1
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel HTTP requests to official job-board APIs and career pages.",
+      "default": 8,
+      "minimum": 1,
+      "maximum": 20,
+      "sectionCaption": "Advanced"
+    }
+  },
+  "required": [
+    "companies"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "title": "Clip Views & Earnings Tracker",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "Video URLs",
+      "type": "array",
+      "description": "TikTok, YouTube / Shorts, or Instagram Reels URLs (or raw IDs). Instagram rows are recorded but not billed \u2014 public pages do not expose view counts without a login.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.youtube.com/shorts/jNQXAC9IVRw",
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      ]
+    },
+    "defaultRatePer1k": {
+      "title": "Default $ per 1,000 views",
+      "type": "number",
+      "description": "Used to compute estimatedPayoutUsd = views / 1,000 \u00d7 rate. Leave empty to only collect stats.",
+      "minimum": 0,
+      "prefill": 1
+    },
+    "urlRates": {
+      "title": "Per-URL rates (optional)",
+      "type": "array",
+      "description": "Override the default CPM for specific URLs.",
+      "editor": "json",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "URL",
+            "description": "TikTok, YouTube, Shorts or Instagram URL (or raw ID)."
+          },
+          "ratePer1k": {
+            "type": "number",
+            "title": "$ per 1,000 views",
+            "description": "Override CPM in USD for this URL."
+          }
+        }
+      }
+    },
+    "maxItems": {
+      "title": "Max posts",
+      "type": "integer",
+      "minimum": 1,
+      "description": "Cap on URLs processed (and charged) in this run."
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "default": 5,
+      "minimum": 1,
+      "maximum": 10,
+      "sectionCaption": "Advanced",
+      "description": "How many post URLs to fetch in parallel (1\u201310)."
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "YouTube often blocks cloud IPs (LOGIN_REQUIRED). Leave the default Apify datacenter proxy on for platform runs. Do not enable residential groups unless a run is still blocked.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      },
+      "default": {
+        "useApifyProxy": true
+      },
+      "sectionCaption": "Advanced"
+    }
+  },
+  "required": [
+    "urls"
+  ]
+}

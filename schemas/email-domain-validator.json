@@ -1,0 +1,70 @@
+{
+  "title": "Email & Domain Validator",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "emails": {
+      "title": "Email addresses",
+      "type": "array",
+      "description": "Email addresses to validate (one per line). Duplicates are skipped.",
+      "editor": "stringList",
+      "prefill": [
+        "support@github.com",
+        "not-an-email",
+        "user@mailinator.com",
+        "jane@gmial.com",
+        "contact@stripe.com"
+      ]
+    },
+    "domains": {
+      "title": "Domains",
+      "type": "array",
+      "description": "Domain names to check for A, MX, SPF and DMARC records (no mailbox).",
+      "editor": "stringList",
+      "prefill": [
+        "example.com"
+      ]
+    },
+    "csvUrl": {
+      "title": "CSV URL (optional)",
+      "type": "string",
+      "description": "HTTP(S) URL of a CSV file with an email and/or domain column. Combined with the lists above, then deduped.",
+      "editor": "textfield"
+    },
+    "csvEmailColumn": {
+      "title": "CSV email column",
+      "type": "string",
+      "description": "Column name for emails. Leave empty to auto-detect (email, e-mail, mail, \u2026).",
+      "editor": "textfield"
+    },
+    "csvDomainColumn": {
+      "title": "CSV domain column",
+      "type": "string",
+      "description": "Column name for domains. Leave empty to auto-detect (domain, website, url, \u2026).",
+      "editor": "textfield"
+    },
+    "suggestTypos": {
+      "title": "Suggest typo fixes",
+      "type": "boolean",
+      "description": "Suggest a corrected domain for common typos such as gmial.com or gmail.con.",
+      "default": true
+    },
+    "maxItems": {
+      "title": "Max results",
+      "type": "integer",
+      "description": "Hard cap on validated (and charged) unique emails and domains in this run.",
+      "minimum": 1,
+      "prefill": 20,
+      "default": 20
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel DNS-over-HTTPS lookups.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 30,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

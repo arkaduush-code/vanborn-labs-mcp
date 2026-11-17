@@ -1,0 +1,118 @@
+{
+  "title": "GTA 6 News & Leaks Monitor",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Search keywords (optional)",
+      "type": "array",
+      "description": "Leave empty to use the built-in GTA 6 / GTA VI / leak / trailer / release-date set.",
+      "editor": "stringList"
+    },
+    "when": {
+      "title": "Recency",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "1h",
+        "1d",
+        "7d",
+        "30d",
+        ""
+      ],
+      "enumTitles": [
+        "Past hour",
+        "Past 24 hours",
+        "Past 7 days",
+        "Past 30 days",
+        "Any time"
+      ],
+      "default": "7d",
+      "description": "Only keep headlines published in this Google News time window."
+    },
+    "kind": {
+      "title": "Only this kind",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "",
+        "official",
+        "leak",
+        "trailer",
+        "gameplay",
+        "release",
+        "rumor",
+        "other"
+      ],
+      "enumTitles": [
+        "Any",
+        "Official",
+        "Leak",
+        "Trailer",
+        "Gameplay",
+        "Release date",
+        "Rumor",
+        "Other"
+      ],
+      "default": "",
+      "description": "Optional classifier filter: official, leak, trailer, gameplay, release, rumor or other."
+    },
+    "onlyGtaRelated": {
+      "title": "Drop off-topic headlines",
+      "type": "boolean",
+      "default": true,
+      "description": "Keep only headlines that mention GTA, Grand Theft Auto or Rockstar Games."
+    },
+    "language": {
+      "title": "Language",
+      "type": "string",
+      "default": "en",
+      "prefill": "en",
+      "editor": "textfield",
+      "description": "Google News language code, e.g. en."
+    },
+    "country": {
+      "title": "Country",
+      "type": "string",
+      "default": "US",
+      "prefill": "US",
+      "editor": "textfield",
+      "description": "Google News country / edition code, e.g. US."
+    },
+    "dateFrom": {
+      "title": "From date",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional after: date (YYYY-MM-DD) added to each query."
+    },
+    "dateTo": {
+      "title": "To date",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Optional before: date (YYYY-MM-DD) added to each query."
+    },
+    "maxItems": {
+      "title": "Max articles",
+      "type": "integer",
+      "minimum": 1,
+      "default": 50,
+      "prefill": 50,
+      "description": "Hard cap on articles returned (and charged) in this run."
+    },
+    "decodeUrls": {
+      "title": "Decode publisher URLs",
+      "type": "boolean",
+      "default": true,
+      "description": "Resolve Google News redirect links to the publisher URL when possible."
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "default": 8,
+      "minimum": 1,
+      "maximum": 20,
+      "sectionCaption": "Advanced",
+      "description": "How many RSS feeds to fetch in parallel (1\u201320)."
+    }
+  }
+}

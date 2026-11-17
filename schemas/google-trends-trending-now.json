@@ -1,0 +1,83 @@
+{
+  "title": "Google Trends Trending Now",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "geo": {
+      "title": "Country or region",
+      "type": "string",
+      "description": "Google Trends geo code, e.g. US, GB, DE, IN, BR, JP, or a US state like US-CA or US-NY.",
+      "editor": "textfield",
+      "default": "US",
+      "prefill": "US"
+    },
+    "geos": {
+      "title": "Additional geos",
+      "type": "array",
+      "description": "Optional extra country or region codes to fetch in the same run (combined and de-duplicated with Country or region).",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "hours": {
+      "title": "Time window",
+      "type": "string",
+      "description": "How far back to look. Official windows: past 4 hours, 24 hours, 48 hours or 7 days.",
+      "editor": "select",
+      "enum": [
+        "4",
+        "24",
+        "48",
+        "168"
+      ],
+      "enumTitles": [
+        "Past 4 hours",
+        "Past 24 hours",
+        "Past 48 hours",
+        "Past 7 days"
+      ],
+      "default": "24",
+      "prefill": "24"
+    },
+    "category": {
+      "title": "Category (optional)",
+      "type": "string",
+      "description": "Filter by category name or ID: Entertainment, Sports, Technology, Business and Finance, Health, Games, Politics, Science, Shopping, and others. Leave empty for all categories.",
+      "editor": "textfield"
+    },
+    "sortBy": {
+      "title": "Sort by",
+      "type": "string",
+      "description": "Order of results before the max-items cap is applied.",
+      "editor": "select",
+      "enum": [
+        "traffic",
+        "recency",
+        "query"
+      ],
+      "enumTitles": [
+        "Search volume (default)",
+        "Most recently started",
+        "Alphabetical"
+      ],
+      "default": "traffic"
+    },
+    "maxItems": {
+      "title": "Max keywords",
+      "type": "integer",
+      "description": "Hard cap on keywords written and charged in this run.",
+      "minimum": 1,
+      "maximum": 5000,
+      "default": 25,
+      "prefill": 25
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel geo requests (keep modest).",
+      "minimum": 1,
+      "maximum": 8,
+      "default": 4,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

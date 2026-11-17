@@ -1,0 +1,81 @@
+{
+  "title": "ATS Career Jobs Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "boards": {
+      "title": "Career URLs or board tokens",
+      "type": "array",
+      "description": "Company career / job-board URLs, or ATS tokens/slugs. The Actor auto-detects Greenhouse, Lever, Ashby, Workable, SmartRecruiters and Recruitee from the URL. You can also write greenhouse:stripe, lever:palantir, ashby:linear, workable:huggingface, smartrecruiters:BoschGroup or recruitee:bunq. A bare slug (e.g. stripe) is probed against every supported ATS.",
+      "editor": "stringList",
+      "prefill": [
+        "https://boards.greenhouse.io/stripe",
+        "https://jobs.ashbyhq.com/linear",
+        "https://apply.workable.com/huggingface/",
+        "https://jobs.lever.co/wealthfront"
+      ]
+    },
+    "companyDomains": {
+      "title": "Company domains to discover",
+      "type": "array",
+      "description": "Optional helper: company websites (e.g. stripe.com or https://openai.com). The Actor looks up which ATS the company uses (slug probe + careers-page scan) and then scrapes those boards. Use Discover only to list the ATS without scraping jobs.",
+      "editor": "stringList",
+      "prefill": []
+    },
+    "discoverOnly": {
+      "title": "Discover only (do not scrape jobs)",
+      "type": "boolean",
+      "description": "If enabled, only return which ATS / board token each company domain uses. Nothing is charged except the tiny start fee.",
+      "default": false
+    },
+    "keyword": {
+      "title": "Keyword filter",
+      "type": "string",
+      "description": "Keep jobs whose title, department, team, location or description contains all of these words (case-insensitive).",
+      "prefill": "",
+      "editor": "textfield"
+    },
+    "location": {
+      "title": "Location filter",
+      "type": "string",
+      "description": "Keep jobs whose location contains this text (e.g. London, Remote, United States).",
+      "prefill": "",
+      "editor": "textfield"
+    },
+    "department": {
+      "title": "Department filter",
+      "type": "string",
+      "description": "Keep jobs whose department or team contains this text (e.g. Engineering, Marketing).",
+      "prefill": "",
+      "editor": "textfield"
+    },
+    "remoteOnly": {
+      "title": "Remote only",
+      "type": "boolean",
+      "description": "Keep only jobs flagged as remote (or whose workplace type is remote).",
+      "default": false
+    },
+    "maxJobs": {
+      "title": "Max jobs in total (optional)",
+      "type": "integer",
+      "description": "Hard cap on the number of job listings scraped (and charged) in this run.",
+      "minimum": 1,
+      "prefill": 50
+    },
+    "includeDescription": {
+      "title": "Include job description",
+      "type": "boolean",
+      "description": "Include full HTML and plain-text descriptions. Turn off for a faster, lighter listing of titles and metadata. On SmartRecruiters this also avoids an extra request per job.",
+      "default": true
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "description": "Parallel HTTP requests to the official job-board APIs.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 50,
+      "sectionCaption": "Advanced"
+    }
+  }
+}

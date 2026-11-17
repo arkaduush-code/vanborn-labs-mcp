@@ -1,0 +1,71 @@
+{
+  "title": "Viral Moments Finder",
+  "type": "object",
+  "schemaVersion": 1,
+  "required": [
+    "videos"
+  ],
+  "properties": {
+    "videos": {
+      "title": "YouTube video or podcast URLs",
+      "type": "array",
+      "description": "Long YouTube videos or podcasts to analyse. Shorts usually have little or no Most Replayed data.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.youtube.com/watch?v=UF8uR6Z6KLc"
+      ]
+    },
+    "maxVideos": {
+      "title": "Max videos",
+      "type": "integer",
+      "minimum": 1,
+      "description": "Cap on videos processed (and charged) in this run."
+    },
+    "maxMoments": {
+      "title": "Max moments per video",
+      "type": "integer",
+      "default": 12,
+      "minimum": 1,
+      "maximum": 40,
+      "description": "Maximum clip timestamps returned per video, ranked by score."
+    },
+    "clipSeconds": {
+      "title": "Suggested clip length (seconds)",
+      "type": "integer",
+      "default": 25,
+      "minimum": 8,
+      "maximum": 90,
+      "description": "Suggested clip window around each moment, in seconds."
+    },
+    "maxComments": {
+      "title": "Comments to scan per video",
+      "type": "integer",
+      "default": 80,
+      "minimum": 0,
+      "maximum": 400,
+      "description": "Used to find timestamps viewers mention (e.g. 3:21)."
+    },
+    "maxConcurrency": {
+      "title": "Max concurrency",
+      "type": "integer",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 6,
+      "sectionCaption": "Advanced",
+      "description": "How many videos to analyse in parallel (1\u20136)."
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "YouTube often blocks cloud IPs (LOGIN_REQUIRED). Leave the default Apify datacenter proxy on for platform runs. Do not enable residential groups unless a run is still blocked.",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true
+      },
+      "default": {
+        "useApifyProxy": true
+      },
+      "sectionCaption": "Advanced"
+    }
+  }
+}

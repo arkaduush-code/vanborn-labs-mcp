@@ -1,0 +1,71 @@
+{
+  "name": "vanborn-labs-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Van Born Labs data tools — YouTube scrapers, Google News, email & domain validation, ATS job listings and more. AI assistants (Claude, Cursor, ChatGPT, Grok) can discover and call the tools. Runs Apify pay-per-event actors with YOUR APIFY_TOKEN.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "vanborn-labs-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "actors.json",
+    "schemas",
+    "README.md",
+    "LICENSE",
+    "smithery.yaml",
+    "glama.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:http": "node dist/index.js --http --port 8080",
+    "dev": "tsx src/index.ts",
+    "test": "npm run build && node dist/test-client.js",
+    "inspector": "npx -y @modelcontextprotocol/inspector node dist/index.js",
+    "sync-schemas": "node scripts/sync-schemas.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "apify",
+    "van-born-labs",
+    "youtube",
+    "youtube-scraper",
+    "google-news",
+    "email-validator",
+    "domain-validator",
+    "jobs-scraper",
+    "greenhouse",
+    "claude",
+    "cursor",
+    "chatgpt",
+    "grok",
+    "web-scraping"
+  ],
+  "author": "Van Born Labs (https://arkadiuszvanborn.com/labs)",
+  "license": "MIT",
+  "homepage": "https://arkadiuszvanborn.com/labs",
+  "bugs": {
+    "url": "https://apify.com/vanborn_labs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "express": "^5.2.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

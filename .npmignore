@@ -1,0 +1,7 @@
+src/
+scripts/
+PUBLISH.md
+dist/test-client.js
+dist/test-client.d.ts
+dist/test-client.js.map
+*.tgz
