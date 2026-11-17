@@ -1,0 +1,37 @@
+{
+  "manifest_version": "0.3",
+  "name": "vanborn-labs-mcp",
+  "display_name": "Van Born Labs",
+  "version": "0.2.0",
+  "description": "MCP server for Van Born Labs data tools — YouTube scrapers, Google News, email and domain validation, ATS job listings and more. Runs Apify pay-per-event actors with your own APIFY_TOKEN.",
+  "author": {
+    "name": "Van Born Labs",
+    "url": "https://arkadiuszvanborn.com/labs"
+  },
+  "homepage": "https://arkadiuszvanborn.com/labs/mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arkaduush-code/vanborn-labs-mcp"
+  },
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js"],
+      "env": {
+        "APIFY_TOKEN": "${user_config.APIFY_TOKEN}"
+      }
+    }
+  },
+  "user_config": {
+    "APIFY_TOKEN": {
+      "type": "string",
+      "title": "Apify API token",
+      "description": "Your personal Apify API token. Tool runs are billed to your Apify account. The server never uses a shared token.",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

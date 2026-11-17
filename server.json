@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.arkaduush-code/vanborn-labs-mcp",
+  "title": "Van Born Labs",
+  "description": "MCP server for Van Born Labs: YouTube, Google News, email/domain validation, and ATS jobs.",
+  "websiteUrl": "https://arkadiuszvanborn.com/labs/mcp",
+  "repository": {
+    "url": "https://github.com/arkaduush-code/vanborn-labs-mcp",
+    "source": "github",
+    "id": "1460735732"
+  },
+  "version": "0.2.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/arkaduush-code/vanborn-labs-mcp/releases/download/v0.2.0/vanborn-labs-mcp-0.2.0.mcpb",
+      "fileSha256": "4113847ebe5f6c926b94b589871c347e4421ce49097f2ac023443de990b20bd1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "APIFY_TOKEN",
+          "description": "Your personal Apify API token. Tool runs are billed to your Apify account.",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

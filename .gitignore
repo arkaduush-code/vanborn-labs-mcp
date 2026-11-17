@@ -11,3 +11,5 @@ secrets/
 *.log
 .DS_Store
 coverage/
+*.mcpb
+.mcpb-stage/

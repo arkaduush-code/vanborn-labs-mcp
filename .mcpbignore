@@ -1,0 +1,17 @@
+# Development and registry metadata — not needed at runtime
+src/
+scripts/
+.git/
+.github/
+PUBLISH.md
+Dockerfile
+smithery.yaml
+glama.json
+.npmignore
+server.json
+dist/test-client.js
+dist/test-client.d.ts
+tsconfig.json
+*.mcpb
+.mcpb-stage/
+coverage/
