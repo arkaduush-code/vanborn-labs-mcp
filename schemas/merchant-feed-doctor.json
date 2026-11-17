@@ -1,0 +1,63 @@
+{
+  "title": "Merchant Feed Doctor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "feed_url": {
+      "title": "Feed URL",
+      "type": "string",
+      "description": "Public URL of a CSV or TSV product feed (Shopify, WooCommerce, or Google). Used if feed_text is empty.",
+      "editor": "textfield",
+      "pattern": "^$|^https?://"
+    },
+    "feed_text": {
+      "title": "Feed text",
+      "type": "string",
+      "description": "Raw CSV/TSV content. Takes precedence over feed_url. Ideal for offline / private feeds.",
+      "editor": "textarea",
+      "prefill": "id,title,description,link,image_link,price,availability,brand,gtin,condition\nSKU-1,ORGANIC COTTON TEE - FREE SHIPPING!!!,<p>Soft tee</p>,http://shop.example.com/tee,https://shop.example.com/tee.jpg,19.9,In Stock,Acme,036000291452,New\n"
+    },
+    "store_url": {
+      "title": "Store URL (Shopify / WooCommerce)",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Your shop's base URL, e.g. https://shop.example.com. Shopify and WooCommerce product exports contain no product URLs; with this set, links are built as /products/<handle> (Shopify) or /?p=<id> (WooCommerce).",
+      "pattern": "^$|^https?://"
+    },
+    "target_country": {
+      "title": "Target country",
+      "type": "string",
+      "description": "Target country code (default: US)",
+      "default": "US",
+      "editor": "textfield"
+    },
+    "currency": {
+      "title": "Currency",
+      "type": "string",
+      "description": "Expected currency code (default: USD)",
+      "default": "USD",
+      "editor": "textfield"
+    },
+    "auto_fix": {
+      "title": "Auto-fix",
+      "type": "boolean",
+      "description": "Apply safe deterministic fixes",
+      "default": true
+    },
+    "title_max": {
+      "title": "Title max length",
+      "type": "integer",
+      "description": "Maximum title length (default 150)",
+      "default": 150,
+      "minimum": 30,
+      "maximum": 150
+    },
+    "strict": {
+      "title": "Strict mode",
+      "type": "boolean",
+      "description": "Treat more issues as errors",
+      "default": false
+    }
+  },
+  "description": "Validate and auto-fix a Google Merchant Center product feed. Paste a CSV/TSV (Shopify export, WooCommerce export or native Google feed) or give a URL."
+}

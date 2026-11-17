@@ -21,7 +21,7 @@ Enabled today (public on the Apify Store):
 | `email_domain_validator` | Email and domain validation: syntax, typos, MX, SPF, DMARC, disposable | $0.50 / 1,000 results |
 | `vanborn_labs_catalog` | Lists every configured tool (including ones not yet enabled). Free, no run. | — |
 
-More actors are already in `actors.json` with `"enabled": false` and will be switched on after they are published on the Store, including GTA 6 news and viral-clip trackers, Content Rewards campaign tools, Company Hiring Signals, Competitor Ads Radar, Unified Reviews Monitor, Google Ads Transparency, Website SEO Audit, YouTube Shorts outliers, Google Trends and the Apple App Store scraper.
+Now enabled as well: Merchant Feed Doctor, GTA 6 news and viral-clip trackers, Content Rewards campaigns monitor and Clip Views & Earnings Tracker. More actors are in `actors.json` with `"enabled": false` and will be switched on after they are published on the Store: Company Hiring Signals, Competitor Ads Radar, Unified Reviews Monitor, Google Ads Transparency, Website SEO Audit, YouTube Shorts outliers, Google Trends, the Apple App Store scraper, Campaign Top Clips, YouTube Viral Moments and Transcripts.
 
 Each tool uses the actor’s official input schema. If you omit the limit field (`maxItems`, `maxResults`, `maxJobs`, …), the server applies a **small default** so a casual prompt does not start a large, expensive run.
 

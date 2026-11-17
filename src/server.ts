@@ -5,7 +5,7 @@ import { ApifyRequestError, getApifyToken, runSyncGetDatasetItems } from "./apif
 import { actorInputZod } from "./schema.js";
 
 export const SERVER_NAME = "vanborn-labs";
-export const SERVER_VERSION = "0.1.0";
+export const SERVER_VERSION = "0.2.0";
 
 const MAX_RESPONSE_CHARS = 120_000;
 
