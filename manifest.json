@@ -3,7 +3,7 @@
   "name": "vanborn-labs-mcp",
   "display_name": "Van Born Labs",
   "version": "0.2.0",
-  "description": "MCP server for Van Born Labs data tools — YouTube scrapers, Google News, email and domain validation, ATS job listings and more. Runs Apify pay-per-event actors with your own APIFY_TOKEN.",
+  "description": "MCP server for Van Born Labs data tools: YouTube scrapers, Google News, email and domain validation, ATS job listings and more. Runs Apify pay-per-event actors with your own APIFY_TOKEN.",
   "author": {
     "name": "Van Born Labs",
     "url": "https://vanbornlabs.com"

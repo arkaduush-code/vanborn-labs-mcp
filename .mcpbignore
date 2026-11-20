@@ -1,4 +1,4 @@
-# Development and registry metadata — not needed at runtime
+# Development and registry metadata, not needed at runtime
 src/
 scripts/
 .git/

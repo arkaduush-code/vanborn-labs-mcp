@@ -126,7 +126,7 @@ function buildPrimary(primary: string | undefined, schema: JsonSchema): ZodTypeA
         try {
           t = t.regex(new RegExp(schema.pattern));
         } catch {
-          // invalid pattern — skip
+          // invalid pattern: skip
         }
       }
       return t;

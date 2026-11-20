@@ -58,7 +58,7 @@ https://github.com/arkaduush-code/vanborn-labs-mcp
 
 The config schema should collect the user’s `apifyToken` and pass it as `APIFY_TOKEN`. Until then, there is no working public form to log into or to point at this repository. The shutdown notice lists ani at smithery.ai for migration questions; that is not a confirmed listing request path.
 
-## 4. Glama (accepts a GitHub repo — owner does this in the browser)
+## 4. Glama (accepts a GitHub repo: the owner does this in the browser)
 
 Glama does accept open-source MCP servers from a public GitHub repository. Official instructions: [https://glama.ai/mcp/faq#faq-submit-mcp-server](https://glama.ai/mcp/faq#faq-submit-mcp-server)
 

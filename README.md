@@ -33,7 +33,7 @@ Enabled today (public on the Apify Store):
 | `ats_career_jobs` | Jobs from Greenhouse, Lever, Ashby, Workable and other public ATS boards | $2.00 / 1,000 jobs |
 | `google_news_rss` | Google News headlines by keyword, topic, site or country | $1.00 / 1,000 articles |
 | `email_domain_validator` | Email and domain validation: syntax, typos, MX, SPF, DMARC, disposable | $0.50 / 1,000 results |
-| `vanborn_labs_catalog` | Lists every configured tool (including ones not yet enabled). Free, no run. | — |
+| `vanborn_labs_catalog` | Lists every configured tool (including ones not yet enabled). Free, no run. | Free |
 
 Now enabled as well: Merchant Feed Doctor, GTA 6 news and viral-clip trackers, Content Rewards campaigns monitor and Clip Views & Earnings Tracker. More actors are in `actors.json` with `"enabled": false` and will be switched on after they are published on the Store: Company Hiring Signals, Competitor Ads Radar, Unified Reviews Monitor, Google Ads Transparency, Website SEO Audit, YouTube Shorts outliers, Google Trends, the Apple App Store scraper, Campaign Top Clips, YouTube Viral Moments and Transcripts.
 
