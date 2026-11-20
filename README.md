@@ -18,7 +18,7 @@ Product pages:
 - [YouTube Outlier Score](https://vanbornlabs.com/products/youtube-outlier-score/) (Chrome extension, live)
 - [Job Post Age Checker](https://vanbornlabs.com/products/job-post-age-checker/) (Chrome extension, live)
 
-Contact: [arkadiuszvanborn@gmail.com](mailto:arkadiuszvanborn@gmail.com)
+Contact: [vanbornlabs@gmail.com](mailto:vanbornlabs@gmail.com)
 
 You bring **your own [Apify](https://apify.com) API token**. Each tool starts a Van Born Labs **pay-per-event** actor on your account, so you are billed for the run and we earn the developer share. The server never uses a shared token.
 
