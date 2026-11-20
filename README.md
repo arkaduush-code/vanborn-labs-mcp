@@ -3,20 +3,20 @@
 Model Context Protocol (MCP) server for **[Van Born Labs](https://apify.com/vanborn_labs)** data tools. AI assistants such as **Claude**, **Cursor**, **ChatGPT** (connectors) and **Grok** can discover and call Merchant Feed Doctor, YouTube scrapers, a Google News RSS scraper, an email and domain validator, ATS job scrapers, and more.
 
 Store: [apify.com/vanborn_labs](https://apify.com/vanborn_labs)  
-Website: [arkadiuszvanborn.com/labs](https://arkadiuszvanborn.com/labs)  
+Website: [vanbornlabs.com](https://vanbornlabs.com)  
 Source: [github.com/arkaduush-code/vanborn-labs-mcp](https://github.com/arkaduush-code/vanborn-labs-mcp)
 
 Product pages:
 
-- [MCP overview](https://arkadiuszvanborn.com/labs/mcp)
-- [Merchant Feed Doctor](https://arkadiuszvanborn.com/labs/merchant-feed-doctor)
-- [YouTube Video Details & Outlier Score](https://arkadiuszvanborn.com/labs/youtube-video-details-outlier-score)
-- [YouTube Comments Scraper](https://arkadiuszvanborn.com/labs/youtube-comments-scraper-fast)
-- [ATS Career Jobs Scraper](https://arkadiuszvanborn.com/labs/ats-career-jobs-scraper)
-- [Google News RSS Scraper](https://arkadiuszvanborn.com/labs/google-news-rss-scraper)
-- [Email Verifier & Domain Validator](https://arkadiuszvanborn.com/labs/email-domain-validator)
-- [YouTube Outlier Score](https://arkadiuszvanborn.com/labs/youtube-outlier-score) (Chrome extension, live)
-- [Job Post Age Checker](https://arkadiuszvanborn.com/labs/job-post-age-checker) (Chrome extension, coming soon)
+- [MCP overview](https://vanbornlabs.com/products/mcp/)
+- [Merchant Feed Doctor](https://vanbornlabs.com/products/merchant-feed-doctor/)
+- [YouTube Video Details & Outlier Score](https://vanbornlabs.com/products/youtube-video-details-outlier-score/)
+- [YouTube Comments Scraper](https://vanbornlabs.com/products/youtube-comments-scraper-fast/)
+- [ATS Career Jobs Scraper](https://vanbornlabs.com/products/ats-career-jobs-scraper/)
+- [Google News RSS Scraper](https://vanbornlabs.com/products/google-news-rss-scraper/)
+- [Email Verifier & Domain Validator](https://vanbornlabs.com/products/email-domain-validator/)
+- [YouTube Outlier Score](https://vanbornlabs.com/products/youtube-outlier-score/) (Chrome extension, live)
+- [Job Post Age Checker](https://vanbornlabs.com/products/job-post-age-checker/) (Chrome extension, live)
 
 Contact: [arkadiuszvanborn@gmail.com](mailto:arkadiuszvanborn@gmail.com)
 

@@ -13,7 +13,7 @@ Checked against the live public pages on 16 November 2026 (America/Phoenix). No 
 Repo: https://github.com/arkaduush-code/vanborn-labs-mcp  
 Default branch: `main`  
 Visibility: public  
-Homepage: https://arkadiuszvanborn.com/labs  
+Homepage: https://vanbornlabs.com  
 `glama.json` maintainers: `arkaduush-code`
 
 ## 2. npm account and publish (not done)

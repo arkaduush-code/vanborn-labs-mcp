@@ -15,7 +15,7 @@ Environment:
   VANBORN_LABS_MCP_CONFIG     Optional path to a custom actors.json
   VANBORN_LABS_MCP_ROOT       Optional package root (actors.json + schemas/)
 
-Docs: https://arkadiuszvanborn.com/labs
+Docs: https://vanbornlabs.com/products/mcp/
 Store: https://apify.com/vanborn_labs
 `);
 }

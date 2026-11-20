@@ -48,9 +48,9 @@
     "grok",
     "web-scraping"
   ],
-  "author": "Van Born Labs (https://arkadiuszvanborn.com/labs)",
+  "author": "Van Born Labs (https://vanbornlabs.com)",
   "license": "MIT",
-  "homepage": "https://arkadiuszvanborn.com/labs",
+  "homepage": "https://vanbornlabs.com",
   "bugs": {
     "url": "https://github.com/arkaduush-code/vanborn-labs-mcp/issues"
   },

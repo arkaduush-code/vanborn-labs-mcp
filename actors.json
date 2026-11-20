@@ -2,7 +2,7 @@
   "$comment": "Van Born Labs MCP tool catalog. Set enabled:true after an actor is public on the Apify Store. Users supply their own APIFY_TOKEN; runs are billed to them (pay-per-event) and Van Born Labs earns the developer share.",
   "namespace": "vanborn_labs",
   "storeUrl": "https://apify.com/vanborn_labs",
-  "websiteUrl": "https://arkadiuszvanborn.com/labs",
+  "websiteUrl": "https://vanbornlabs.com",
   "actors": [
     {
       "toolName": "merchant_feed_doctor",

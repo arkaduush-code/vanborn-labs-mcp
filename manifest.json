@@ -6,9 +6,9 @@
   "description": "MCP server for Van Born Labs data tools — YouTube scrapers, Google News, email and domain validation, ATS job listings and more. Runs Apify pay-per-event actors with your own APIFY_TOKEN.",
   "author": {
     "name": "Van Born Labs",
-    "url": "https://arkadiuszvanborn.com/labs"
+    "url": "https://vanbornlabs.com"
   },
-  "homepage": "https://arkadiuszvanborn.com/labs/mcp",
+  "homepage": "https://vanbornlabs.com/products/mcp/",
   "repository": {
     "type": "git",
     "url": "https://github.com/arkaduush-code/vanborn-labs-mcp"
