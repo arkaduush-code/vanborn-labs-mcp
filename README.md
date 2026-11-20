@@ -35,7 +35,7 @@ Enabled today (public on the Apify Store):
 | `email_domain_validator` | Email and domain validation: syntax, typos, MX, SPF, DMARC, disposable | $0.50 / 1,000 results |
 | `vanborn_labs_catalog` | Lists every configured tool (including ones not yet enabled). Free, no run. | Free |
 
-Now enabled as well: Merchant Feed Doctor, GTA 6 news and viral-clip trackers, Content Rewards campaigns monitor and Clip Views & Earnings Tracker. More actors are in `actors.json` with `"enabled": false` and will be switched on after they are published on the Store: Company Hiring Signals, Competitor Ads Radar, Unified Reviews Monitor, Google Ads Transparency, Website SEO Audit, YouTube Shorts outliers, Google Trends, the Apple App Store scraper, Campaign Top Clips, YouTube Viral Moments and Transcripts.
+Now enabled as well: Merchant Feed Doctor, GTA 6 news and viral-clip trackers, Content Rewards campaigns monitor and Clip Views & Earnings Tracker. Other public Store actors are listed in `actors.json` with `"enabled": false` until they are turned on here: Company Hiring Signals, Competitor Ads Radar, Google Ads Transparency, Website SEO Audit, YouTube Shorts outliers, Google Trends, the Apple App Store scraper, Campaign Top Clips, YouTube Viral Moments and Transcripts.
 
 Each tool uses the actor’s official input schema. If you omit the limit field (`maxItems`, `maxResults`, `maxJobs`, …), the server applies a **small default** so a casual prompt does not start a large, expensive run.
 
@@ -143,7 +143,7 @@ npx -y @modelcontextprotocol/inspector node dist/index.js
 
 ## Publishing
 
-This package is ready to publish but is **not published yet**. See [PUBLISH.md](./PUBLISH.md) for the npm, GitHub, Smithery and Glama steps. Do not run those steps until the accounts and repository exist.
+The source repository is public on GitHub. The npm package is not published yet.
 
 ## License
 

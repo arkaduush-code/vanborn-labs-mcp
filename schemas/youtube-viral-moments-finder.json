@@ -52,7 +52,7 @@
       "minimum": 1,
       "maximum": 6,
       "sectionCaption": "Advanced",
-      "description": "How many videos to analyse in parallel (1\u20136)."
+      "description": "How many videos to analyse in parallel (1-6)."
     },
     "proxyConfiguration": {
       "title": "Proxy configuration",

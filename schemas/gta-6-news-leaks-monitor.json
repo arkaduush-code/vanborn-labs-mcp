@@ -112,7 +112,7 @@
       "minimum": 1,
       "maximum": 20,
       "sectionCaption": "Advanced",
-      "description": "How many RSS feeds to fetch in parallel (1\u201320)."
+      "description": "How many RSS feeds to fetch in parallel (1-20)."
     }
   }
 }

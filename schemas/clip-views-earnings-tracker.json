@@ -6,7 +6,7 @@
     "urls": {
       "title": "Video URLs",
       "type": "array",
-      "description": "TikTok, YouTube / Shorts, or Instagram Reels URLs (or raw IDs). Instagram rows are recorded but not billed \u2014 public pages do not expose view counts without a login.",
+      "description": "TikTok, YouTube / Shorts, or Instagram Reels URLs (or raw IDs). Instagram rows are recorded but not billed: public pages do not expose view counts without a login.",
       "editor": "stringList",
       "prefill": [
         "https://www.youtube.com/shorts/jNQXAC9IVRw",
@@ -54,7 +54,7 @@
       "minimum": 1,
       "maximum": 10,
       "sectionCaption": "Advanced",
-      "description": "How many post URLs to fetch in parallel (1\u201310)."
+      "description": "How many post URLs to fetch in parallel (1-10)."
     },
     "proxyConfiguration": {
       "title": "Proxy configuration",

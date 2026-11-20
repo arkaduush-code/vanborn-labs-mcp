@@ -1,7 +1,7 @@
 {
   "name": "vanborn-labs-mcp",
   "version": "0.2.0",
-  "description": "MCP server for Van Born Labs data tools \u2014 YouTube scrapers, Google News, email & domain validation, ATS job listings and more. AI assistants (Claude, Cursor, ChatGPT, Grok) can discover and call the tools. Runs Apify pay-per-event actors with YOUR APIFY_TOKEN.",
+  "description": "MCP server for Van Born Labs data tools: YouTube scrapers, Google News, email & domain validation, ATS job listings and more. AI assistants (Claude, Cursor, ChatGPT, Grok) can discover and call the tools. Runs Apify pay-per-event actors with YOUR APIFY_TOKEN.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

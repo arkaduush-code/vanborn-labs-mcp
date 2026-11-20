@@ -23,7 +23,7 @@
     "searchTerms": {
       "title": "\ud83d\udd0e Search terms",
       "type": "array",
-      "description": "YouTube search queries. Top video results are scraped \u2014 great for finding outliers in a niche.",
+      "description": "YouTube search queries. Top video results are scraped, great for finding outliers in a niche.",
       "editor": "stringList",
       "prefill": []
     },

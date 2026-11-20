@@ -49,7 +49,7 @@
       "minimum": 1,
       "maximum": 8,
       "sectionCaption": "Advanced",
-      "description": "How many video-detail fetches to run in parallel (1\u20138)."
+      "description": "How many video-detail fetches to run in parallel (1-8)."
     },
     "proxyConfiguration": {
       "title": "Proxy configuration",

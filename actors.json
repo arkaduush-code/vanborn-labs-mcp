@@ -196,7 +196,7 @@
       "actorName": "company-hiring-signals-api",
       "storeUrl": "https://apify.com/vanborn_labs/company-hiring-signals-api",
       "title": "Company Hiring Signals",
-      "description": "Get company hiring signals from public ATS boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Workday): open roles, departments, seniority, remote share, new roles since last run, weekly velocity and a 0\u2013100 momentum score. Official public APIs, no login. Use this for sales prospecting, recruiting and investment research. Van Born Labs. $3.00 per 1,000 companies, billed to your Apify account.",
+      "description": "Get company hiring signals from public ATS boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters, Recruitee, Workday): open roles, departments, seniority, remote share, new roles since last run, weekly velocity and a 0-100 momentum score. Official public APIs, no login. Use this for sales prospecting, recruiting and investment research. Van Born Labs. $3.00 per 1,000 companies, billed to your Apify account.",
       "enabled": false,
       "schemaFile": "schemas/company-hiring-signals-api.json",
       "limitField": "maxCompanies",
@@ -221,23 +221,6 @@
       "timeoutSecs": 150,
       "pricePerResultUsd": 0.005,
       "priceLabel": "$5.00 per 1,000 ads",
-      "startPriceUsd": 5e-05
-    },
-    {
-      "toolName": "unified_reviews_monitor",
-      "actorId": "vanborn_labs~unified-reviews-monitor",
-      "actorNumericId": "u5mfGSbAai9yhBCHF",
-      "actorName": "unified-reviews-monitor",
-      "storeUrl": "https://apify.com/vanborn_labs/unified-reviews-monitor",
-      "title": "Unified Reviews Monitor",
-      "description": "Monitor public reviews a business publishes on its own website (schema.org / JSON-LD). Returns unified review records, rating averages, rating trend, new-since-last-run items and a drop alert. Third-party sites such as Trustpilot, G2, Capterra, Google Maps, Yelp and Tripadvisor are not scraped. No login. Use this for reputation monitoring and review alerts. Van Born Labs. $2.50 per 1,000 reviews plus $0.005 per business summary, billed to your Apify account.",
-      "enabled": false,
-      "schemaFile": "schemas/unified-reviews-monitor.json",
-      "limitField": "maxBusinesses",
-      "defaultMaxItems": 3,
-      "timeoutSecs": 150,
-      "pricePerResultUsd": 0.0025,
-      "priceLabel": "$2.50 per 1,000 reviews",
       "startPriceUsd": 5e-05
     },
     {

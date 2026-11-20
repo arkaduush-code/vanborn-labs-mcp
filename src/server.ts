@@ -121,7 +121,7 @@ export function createServer(catalog: Catalog = loadCatalog()): McpServer {
     {
       title: "Van Born Labs tool catalog",
       description:
-        "List Van Born Labs MCP tools and Apify Store actors, including ones that are configured but not yet enabled. Use this to discover YouTube scrapers, Google News, email validators, job scrapers, GTA 6 monitors, hiring signals, ads radar and reviews monitor. No Apify run is started and nothing is billed.",
+        "List Van Born Labs MCP tools and Apify Store actors, including ones that are configured but not yet enabled. Use this to discover YouTube scrapers, Google News, email validators, job scrapers, GTA 6 monitors, hiring signals and ads tools. No Apify run is started and nothing is billed.",
       annotations: {
         title: "Van Born Labs tool catalog",
         readOnlyHint: true,

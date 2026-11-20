@@ -191,7 +191,7 @@
       "minimum": 1,
       "maximum": 10,
       "sectionCaption": "Advanced",
-      "description": "How many YouTube/TikTok lookups to run in parallel (1\u201310)."
+      "description": "How many YouTube/TikTok lookups to run in parallel (1-10)."
     },
     "proxyConfiguration": {
       "title": "Proxy configuration",
